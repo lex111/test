@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use App\AppKernel;
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$kernel = new AppKernel();
+$kernel->boot();
+$container = $kernel->getContainer();
+
+/** @var Application $application */
+$application = $container->get(Application::class);
+$application->run();
